@@ -14,10 +14,10 @@
         android:layout_centerHorizontal="true"
         android:layout_marginHorizontal="4dp"
         android:layout_marginVertical="8dp"
-        android:text="Grid V RecyclerView"
+        android:text="Grid Vertical RecyclerView"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="34sp" />
+        android:textSize="26sp" />
 
 
     <androidx.recyclerview.widget.RecyclerView

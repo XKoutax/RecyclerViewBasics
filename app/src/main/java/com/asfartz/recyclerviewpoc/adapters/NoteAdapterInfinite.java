@@ -13,7 +13,7 @@ import com.asfartz.recyclerviewpoc.R;
 
 import java.util.List;
 
-public class NoteAdapterInfinite extends RecyclerView.Adapter<NoteAdapterInfinite.MyModelViewHolder> {
+public class NoteAdapterInfinite extends RecyclerView.Adapter<NoteAdapterInfinite.mNoteViewHolder> {
 
     private final List<Note> notes;
 
@@ -22,15 +22,15 @@ public class NoteAdapterInfinite extends RecyclerView.Adapter<NoteAdapterInfinit
     }
 
     @Override
-    public NoteAdapterInfinite.MyModelViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public mNoteViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.my_model_row, parent, false);
 
-        NoteAdapterInfinite.MyModelViewHolder vh = new NoteAdapterInfinite.MyModelViewHolder(v);
+        mNoteViewHolder vh = new mNoteViewHolder(v);
         return vh;
     }
 
     @Override
-    public void onBindViewHolder(NoteAdapterInfinite.MyModelViewHolder holder, int position) {
+    public void onBindViewHolder(mNoteViewHolder holder, int position) {
         int positionInList = position % notes.size();
         holder.tvTitle.setText(notes.get(positionInList).getTitle());
         holder.tvDesc.setText(notes.get(positionInList).getDescription());
@@ -48,12 +48,12 @@ public class NoteAdapterInfinite extends RecyclerView.Adapter<NoteAdapterInfinit
         this.notifyDataSetChanged();
     }
 
-    public static class MyModelViewHolder extends RecyclerView.ViewHolder {
+    public static class mNoteViewHolder extends RecyclerView.ViewHolder {
         private TextView tvTitle;
         private TextView tvDesc;
 
 
-        MyModelViewHolder(@NonNull final View itemView) {
+        mNoteViewHolder(@NonNull final View itemView) {
             super(itemView);
             tvTitle = itemView.findViewById(R.id.tv_title);
             tvDesc = itemView.findViewById(R.id.tv_descr);
